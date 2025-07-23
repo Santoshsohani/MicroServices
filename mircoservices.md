@@ -48,3 +48,11 @@ Use tools like:
 - Docker + Kubernetes for containerization and orchestration.
 - Prometheus + Grafana or Datadog for monitoring.
 - ELK Stack or OpenTelemetry for logging and tracing.
+
+# How Netflix moved from Monolith to Microservice
+In the Early days Netflix was a DVD rental service, its web application was built as a monolith in Java.
+which means entire application in a single code base, services tightly coupled and deployed in a data center.
+Eventually, as Netflix grows in the number of users, streaming - problem occured In 2008 Netflix was down for few days because of a database corruption which is a single point of failure.
+
+Hence, The realization current monolith architecture is fragile and too risky to add new features or change the existing one and slow risky deployment.
+
