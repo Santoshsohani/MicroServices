@@ -56,3 +56,85 @@ Eventually, as Netflix grows in the number of users, streaming - problem occured
 
 Hence, The realization current monolith architecture is fragile and too risky to add new features or change the existing one and slow risky deployment.
 
+Step-by-Step Breakdown
+🧩 Step 1: Modularize the Monolith
+
+They began by breaking the monolith into modules/domains, like:
+
+    User Management
+
+    Movie Catalog
+
+    Streaming Engine
+
+    Recommendations
+
+    Billing
+
+    Reviews
+    Each module would eventually become a microservice.
+
+☁️ Step 2: Move to the Cloud (AWS)
+
+They started moving services from their data center to AWS.
+
+    No more hardware management.
+
+    Easy to scale up/down.
+
+    More reliable.
+
+This allowed them to build and deploy services independently.
+🧱 Step 3: Build Individual Microservices
+
+They built hundreds of microservices, each doing one thing:
+Service	Responsibility
+Auth Service	Login, Tokens, Session
+Catalog Service	Movie metadata
+Recommendation Service	Personalized suggestions
+Billing Service	Subscription management
+Streaming Service	Video delivery logic
+
+Each service had:
+
+    Its own team
+
+    Its own codebase
+
+    Its own deployment pipeline
+
+🔗 Step 4: Communication via APIs
+
+    Services communicated via REST APIs (and later gRPC).
+
+    Used asynchronous messaging (via queues) where needed.
+
+🧠 Step 5: Smart Tools for Resilience
+
+Netflix built internal tools to manage microservices:
+Tool	Purpose
+Eureka	Service Discovery – which services are alive
+Hystrix	Circuit Breaker – prevents cascading failures
+Zuul	API Gateway – routes requests to correct service
+Ribbon	Client-side load balancing
+Archaius	Dynamic configuration management
+📊 Step 6: Observability & Monitoring
+
+They implemented advanced logging, monitoring, and alerting.
+
+    Used tools like Graphite, Atlas, Spinnaker.
+
+    Collected metrics from every service.
+
+    Built dashboards to monitor health and performance.
+
+⚙️ Step 7: CI/CD Automation
+
+They created Spinnaker, their own Continuous Delivery tool to:
+
+    Deploy changes to individual services.
+
+    Roll back instantly if something fails.
+
+    Run tests automatically.
+
