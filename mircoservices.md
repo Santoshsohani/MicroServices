@@ -181,3 +181,48 @@ In an Distributed system - you can gurantee any two of the following three prope
 **Consistency**
 It refers to all the nodes in the system should have **same data at the same time**, in other words every read operation should have the latest write operation or error.
 
+**Availabilty**
+It refers that for every available node - read/write operation should respond in timely manner even if some nodes are down.
+
+**partition Tolerance**
+It refers to the system continue to work fine even if there's an network partion has occured
+
+In a system, **Network Partion** is a part-and-parcel hence **Partion Tolerance (P)** is must. Now the system can have either of consistency or availabilty
+
+**CAP Tradeoff's**
+- **AP**: Availabilty & Partion Tolerance
+Here the data is availabe at every given time, but not consistent used when the data should be avaialabe every time no matter of the consistency (Social Media Platform) user experience matters the most.
+
+- **CP**: Consistency & Partion Tolerance
+Here the data is consistency which means the data is upto the mark as per the latest write operation but not available immediately. (Used in Banking Systems)
+
+- **CA**: Consistency & Availabilty
+Here the data is consistent and available every time -  without any partion tolerance
+This is not an ideal world scenarion, Here it assumes in Distributed System no network failure has occured.
+
+**Real-Life Analogy: Online Shopping**
+
+Let’s say you’re buying the last unit of a phone online.
+
+    Two users try to buy it at the same time.
+
+    Servers are in two regions (India and US).
+
+    Network between them breaks (partition).
+
+Now:
+✅ If the system is CP:
+
+    One user’s request will succeed.
+
+    The other may get an error or delay.
+
+    Data stays correct.
+
+✅ If the system is AP:
+
+    Both requests might go through 😬
+
+    But later, the system realizes only one item was in stock.
+
+    Now it needs to reconcile (e.g., cancel one order).
