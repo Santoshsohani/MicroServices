@@ -171,3 +171,13 @@ Distributed systems are set of independent machine (nodes) which commnunicate wi
 | **Middleware**    | Software that helps coordinate (e.g., message queues, service mesh) |
 | **Databases**     | Often distributed themselves (e.g., Cassandra, MongoDB Cluster)     |
 
+
+# CAP Theorem
+In an Distributed system - you can gurantee any two of the following three properties:
+1. **Consistency**
+2. **Availabity**
+3. **Partition Tolerance**
+
+**Consistency**
+It refers to all the nodes in the system should have **same data at the same time**, in other words every read operation should have the latest write operation or error.
+
