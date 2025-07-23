@@ -138,3 +138,36 @@ They created Spinnaker, their own Continuous Delivery tool to:
 
     Run tests automatically.
 
+
+
+## Distributed Systems
+Distributed systems are set of independent machine (nodes) which commnunicate with eachother to solve a given problem or complete a given task.
+**Examples**
+| System        | How It's Distributed                                            |
+| ------------- | --------------------------------------------------------------- |
+| Google Search | Thousands of servers across data centers answer your query.     |
+| Netflix       | Separate services for streaming, billing, recommendations, etc. |
+| WhatsApp      | Messaging runs on different servers around the world.           |
+| Microservices | Each service can run on different machines.                     |
+
+**Core Features**
+- Multiple Nodes
+- Communication
+- Corodination
+- Transparency
+- Fault Tolreance
+- Scalability
+
+**Advantages**
+- Handle Millions of users
+- no single point of failure
+- modular development
+
+**Components**
+| Component         | Role                                                                |
+| ----------------- | ------------------------------------------------------------------- |
+| **Nodes/Servers** | Machines that run services or store data                            |
+| **Network**       | Enables communication between nodes                                 |
+| **Middleware**    | Software that helps coordinate (e.g., message queues, service mesh) |
+| **Databases**     | Often distributed themselves (e.g., Cassandra, MongoDB Cluster)     |
+
