@@ -268,4 +268,20 @@ Eventually consistent is the phenomena where the data is updated eventually acro
 - Eventually, all servers agree, and everyone sees the update.
 
 
+# Sagas and Distributed Transactions in Microservices
+Transactions in monolithic arhcitecture followed the **ACID** properties, as the services were tightly coupled all the services worked together to perform a transaction - finally would make a commit to the database.
+Here if any of the operations gets failed the complete transactions will be failed and would start again.
 
+**Transactions in distributed systems**
+Transactions in distributed systems spread across various services & databases, but managing this was a tedious task beacuse the transaction logic was completey is single unit. As a alternative to this **sagas patterns** were introduced.
+
+**Sagas Pattern**
+The saga pattern is an alternative approach to manage distributed transactions in microservices. Instead of trying to execute all operations atomically, it breaks the transaction into a sequence of local transactions, each in a single service.
+
+How Sagas Work:
+
+1. Sequence of Local Transactions: Each step in a saga is a local transaction that updates the database and publishes an event/message.
+2. Compensating Transactions: For each transaction, there's a compensating transaction that can undo its effects if needed.
+3. Orchestration or Choreography: The saga can be coordinated either through:
+    - Orchestration: A central coordinator tells participants what to do
+    - Choreography: Participants subscribe to each other's events and react accordingly
