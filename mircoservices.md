@@ -248,3 +248,24 @@ BASE properties is alternative to ACID properties specaially used with NoSql dat
 **When to Use BASE?**
 - Social media (a delayed "like" is okay).
 - IoT/sensor data (speed matters more than precision).
+
+# ACID vs BASE Consistency
+
+| **Key Feature**  | **ACID**                           | **BASE**                                     |
+| ---------------- | ---------------------------------- | -------------------------------------------- |
+| **Consistency**  | Instant (strictly correct)         | Eventual (correct later)                     |
+| **Availability** | May fail to enforce rules          | Always responds, even with delays            |
+| **Speed**        | Slower (due to consistency checks) | Faster (no need to wait for synchronization) |
+| **Use Cases**    | Banking, Flights, Healthcare       | Social Media, Ads, Analytics                 |
+
+# Eventually Consistency
+Eventually consistent is the phenomena where the data is updated eventually across all the serves but not immediately, Sometimes data may be inconsistency for some time, eventaully this would be available for all the users.
+
+**How It Works**
+- You update data (e.g., post a tweet).
+- The change syncs across servers—but not instantly.
+- For a short time, some users might see the old tweet (or no tweet).
+- Eventually, all servers agree, and everyone sees the update.
+
+
+
