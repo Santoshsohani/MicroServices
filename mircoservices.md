@@ -226,3 +226,25 @@ Now:
     But later, the system realizes only one item was in stock.
 
     Now it needs to reconcile (e.g., cancel one order).
+
+# ACID Properties
+ACID properties is conceputal properties which makes sure transactions occurs successfully, reliable and with safety.
+- **Atomicity**: It refers either all or none -  a single transactions can have multiple operations, if one of the operation fails it cannot be resumed again either start again.
+- **Consistency**: It refers to transactions should always follow the set of rules and constraints defined, If one of the rules was not followed then the tranasction failed.
+- **Isolation**: If two transactions are executed simultaneously, there should be no intervention between these two transactions.
+- **Duarabilty**: Once a transactions is complete and commited to the database, the data cannot be lost.
+
+**When ACID is important**
+- Banking (no lost money)
+- Online Shopping (orders don't disappear)
+- Healthcare (Patients records must be accurate)
+
+# BASE Properties
+BASE properties is alternative to ACID properties specaially used with NoSql database. 
+- Basically Available: The system always responds, even if data isn't perfectly up-to-date.
+- Soft State: Data can change over time even without new updates beacause of syncing delays
+- Eventually Consistent: The data will be synced eventaully in a distributed environment, but not immediately.
+
+**When to Use BASE?**
+- Social media (a delayed "like" is okay).
+- IoT/sensor data (speed matters more than precision).
