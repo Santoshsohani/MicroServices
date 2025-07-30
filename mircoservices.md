@@ -85,6 +85,7 @@ They started moving services from their data center to AWS.
     More reliable.
 
 This allowed them to build and deploy services independently.
+
 🧱 Step 3: Build Individual Microservices
 
 They built hundreds of microservices, each doing one thing:
