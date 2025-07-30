@@ -301,3 +301,10 @@ Due to which:
 - Order placed can be doubled
 - You might double charge a customer
 - You might update data inconsistently.
+
+**Idempotence can be used in**
+
+- Payment Systems: A user should be able to make payments only once, avoid duplicate transactions by checking transaction_id
+- Message Queue: A message should only be processed once, avoid processing same messages more than once.
+- Retry Mechanism: 	Safe to retry requests without unexpected side-effects.
+- HTTP Request (GET, POST): GET and PUT methods should be idemptent using ID's.
