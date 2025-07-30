@@ -285,3 +285,18 @@ How Sagas Work:
 3. Orchestration or Choreography: The saga can be coordinated either through:
     - Orchestration: A central coordinator tells participants what to do
     - Choreography: Participants subscribe to each other's events and react accordingly
+
+# Idempotence
+Idempotence means performing a operation multiple times has the same effect as performing it once.
+
+**You could same request twice, but its result should not be changed.**
+
+Idempotence is important because, In an Distributed network 
+- Operation could be retried due to network failures
+- Asynchronous message duplicates
+- User may click same button multiple times
+
+Due to which:
+- Order placed can be doubled
+- You might double charge a customer
+- You might update data inconsistently.
